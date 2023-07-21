@@ -1,7 +1,10 @@
 ### gues number (computer)
 import random
 
-def guess_computer (x):
+x = int(input("Please put the maximum number: "))
+
+
+def guess_computer(x):
   print(f"Select a number between 1 and {x}: ")
 
   limit_i = 1
@@ -14,11 +17,14 @@ def guess_computer (x):
       predition = random.randint(limit_i, limit_s) # Could also be the limit_s
     else:
       predition = limit_i
-    answer = int(input(f"My predition is: {predition}. If you predition is higth say (A), if you predition is low say (B), but if you predition is Correct say (C)")).lower()
+    answer = input(f"My predition is: {predition}. If you predition is higth say (H), if you predition is low say (L), but if you predition is Correct say (C): ").lower()
 
-    if answer == 'a':
+    if answer == 'h':
       limit_s = predition - 1
-    elif answer == 'b':
+    elif answer == 'l':
       limit_i = predition + 1
 
   print(f"Congratulation, the computer guessed the number {predition}, correctly")
+
+
+guess_computer(x)
